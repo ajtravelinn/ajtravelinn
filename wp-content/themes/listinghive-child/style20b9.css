@@ -1,0 +1,356 @@
+/*
+Theme Name: ListingHive Child
+Author URI: https://hivepress.io
+Theme URI: https://hivepress.io/themes/listinghive
+Theme URI: https://hivepress.io
+Author: HivePress
+Description: A multipurpose WordPress theme that allows you to build any type of directory and listing websites. Whether it’s a business directory, job board, real estate, classifieds or basically any listing website — ListingHive is a great choice for it.
+Version: 1.0.2
+Template: listinghive
+Domain Path: /languages
+*/
+
+:root{
+    --primary-color: #007bff; /* Primary color for links and buttons */
+    --secondary-color: #212529; /* Secondary color for text */
+    --background-color: #f8f9fa; /* Background color for sections */
+    --text-color: #343a40; /* Default text color */
+    --border-color: #dee2e6; /* Border color for elements */
+    --hover-color: #0056b3; /* Hover color for links and buttons */
+    --subcategory-color:#242424; /* Color for subcategory text */
+    --black-color:#000; /* Black color for text */
+    --white-color:#fff; /* White color for text */
+    --link-color: #035E8C; /* Link color */
+    --link-hover-color: #0056b3; /* Link hover color */
+    --white-color: #ffffff; /* White color for backgrounds */
+}
+
+span.page-numbers.current {
+    padding: 11px 11px;
+    background-color:#007bff; /* Change pagination background color */
+    color: var(--white-color); /* Change pagination text color */
+    border-radius: 5px;
+}
+a.page-numbers{
+    color: #f8f9fa !important; /* Change pagination link color on hover */
+    background-color:  #af0663; /* Change pagination background color on hover */
+    border-color: #dee2e6 !important; /* Change pagination border color on hover */
+    padding: 11px 11px;
+    border-radius: 5px;
+}
+a.page-numbers:hover{
+    background-color: #007bff !important; /* Change pagination link color on hover */
+}
+
+
+/*=========================================================================================
+            Custom Css
+===========================================================================================*/
+    .header-navbar {
+        padding: 1rem 2rem !important;
+    }
+    img.custom-logo {
+        height: 70px !important;
+    }
+    .header-hero--cover h1, .has-medium-font-size{
+        color: #242424 !important;
+    }
+    .header-hero {
+        /*background-image: url(http://localhost/directorysite/wp-content/uploads/2025/09/compressed_ics-hero-banner.jpg) !important;*/
+    }
+    #content {
+		top: 0;
+		margin-top: 30px;
+	}
+     header.hp-page__header{
+        background: #cccccc66;
+        padding: 60px;
+        border-radius: 5px;
+    }
+    .tax-hp_listing_category .hp-form--listing-search{
+        margin: 0 !important;
+    }
+    /* Full width page layout */
+    .custom-fullwidth-page {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    section.header-hero.header-hero--title{
+        display: none;
+    }
+    .container {
+        width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    footer .container {
+        padding: 3% ! IMPORTANT;
+        margin: 0 auto;
+    }
+
+    header.site-header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9999;
+        background: #0a0a0aa6;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* when scrolled */
+    header.site-header.scrolled, ul.sub-menu.hp-menu.hp-menu--user-account, .header-navbar__menu ul li ul {
+        background: rgba(24, 24, 24, 0.925);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .header-navbar__menu ul li a, .header-navbar__menu ul li.menu-item-has-children::after, .hp-link i {
+        color: #ffffff !important;
+    }
+    .header-navbar__menu ul li a:hover, .hp-link i:hover {
+        color: #ffba00 !important;
+    }
+    .header-navbar__burger>a i {
+        color: #fff;
+    }
+
+    .site-footer {padding: 0rem 0 !important;margin-top: 3rem;}
+
+    footer .container {
+        background: #414141 !important;
+        color: #fff;
+    }
+    footer h5, footer.site-footer li a, footer.site-footer li a ::before{
+        color: #fff;
+    }
+    .widget_nav_menu li::before {
+        color: #fff;
+    }
+    .footer-widgets:not(:last-child) {border-bottom: 1px solid rgb(248 249 251 / 8%) !important;}
+    .widget_archive li::before, .widget_categories li::before, .widget_meta li::before, .widget_nav_menu li::before, .widget_product_categories li::before, .wp-block-archives li::before, .wp-block-categories li::before {
+        color: #fff;
+    }
+    .footer-navbar__copyright {
+        color: #fff !important;
+    }
+    .hp-form__actions p a,.hp-form__actions a {
+        color: var(--link-color) !important;
+        font-weight: 700 !important;   
+    }
+    header.hp-listing-category__header, .hp-listing-category__content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        text-align: center !important;
+        overflow: hidden !important;
+        padding: 0px !important;
+        margin: 0 !important;
+    }
+    .hp-listing-category__content {
+        padding: 0px 10px !important;
+    }
+    .hp-listing-category--view-block .hp-listing-category__content {
+        bottom: 40px !important;
+        left: 15px;
+    }
+    .hp-listing-category--view-block .hp-listing-category__image:not(:last-child) {
+        margin: 0 !important;
+    }
+    .hp-listing-category--view-block .hp-listing-category__image a img {
+        height: 100% !important;
+        width: auto;
+        display: block;
+        object-fit: cover;
+    }
+/*=========================================================
+							Responsive 
+===========================================================*/
+
+/*-------------------------------------------------------
+				@media screen 1184px Start
+---------------------------------------------------------*/
+/* XXL devices (≥1200px) */
+    @media (min-width: 1200px) {
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 100%;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .header-hero--large {
+            padding: 0rem 0 !important;
+        }
+        .hp-listing-category--view-page .hp-listing-category__header {
+            padding: 15vh 0;
+            z-index: 1; /* ensures overlay sits behind text */
+        }
+
+        /* Overlay using ::before */
+        .hp-listing-category--view-page .hp-listing-category__header::before {
+            content: '';
+            position: absolute;
+            top: 0; 
+            left: 0;
+            right: 0; 
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* adjust opacity/color here */
+            z-index: 2; /* sits above the image */
+        }
+
+        /* Ensure text sits above overlay */
+        .hp-listing-category--view-page .hp-listing-category__header .header-hero__content,.hp-listing-category__item-count.hp-listing-category__count, h1.hp-listing-category__name, .hp-listing-category__description{
+            position: relative;
+            z-index: 3;
+        }
+    }
+@media screen and (max-width: 1184px) {
+
+}
+
+/*-------------------------------------------------------
+				@media screen 1070px Start
+---------------------------------------------------------*/
+@media screen and (max-width: 1070px) {
+
+}
+/*-------------------------------------------------------
+				@media screen 1069px Start
+---------------------------------------------------------*/
+@media screen and (max-width: 1069px) {
+
+}
+
+ @media (max-width: 1040px) {
+
+}
+
+/*-------------------------------------------------------
+				@media screen 980px Start
+---------------------------------------------------------*/
+@media screen and (max-width: 980px) {
+    .container {
+        width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .container-fluid {
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        align-items: center;
+    }
+    ul#menu-header {
+        height: 100vh;
+    }
+    .header-navbar__burger>ul>li>a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-navbar__burger ul li.menu-item-has-children::after {
+ 
+    }
+    i.hp-icon.fas.fa-user {
+        color: #000 !important;
+        padding: 10px 0;
+        text-align: center;
+    }
+    ul.sub-menu {
+        background: #292929;
+        padding: 10px 0;
+    }
+    .categorysec {
+        overflow: hidden;
+        padding: 0 10px;
+    }
+    footer h5, footer.site-footer li a, footer.site-footer li a ::before {
+        text-align: left;
+    }
+    .widget_archive li::before, .widget_categories li::before, .widget_meta li::before, .widget_nav_menu li::before, .widget_product_categories li::before, .wp-block-archives li::before, .wp-block-categories li::before {
+        color: #fff;
+    }
+    .footer-navbar__menu ul {flex-wrap: nowrap;}
+    .col-sm.col-xs-12 {padding: 0 10px 0 35px;}
+    .main_wrap.categorypic.py-5.px-5, .main_wrap.content_bg.py-5.px-5.bg-light, .main_wrap.content_bg.py-5.px-5.bg-white, .main_wrap.content_bg.pt-5.px-5.bg-white{padding: 25px 0 !important;}
+
+}
+
+/*-------------------------------------------------------
+				@media screen 849px Start
+---------------------------------------------------------*/
+@media screen and (max-width: 849px) {
+
+}
+/*-------------------------------------------------------
+				@media screen 782px Start
+---------------------------------------------------------*/
+@media only screen and (max-width: 782px) {
+    .container {
+        width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .container-fluid {
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        align-items: center;
+    }
+}
+/*-------------------------------------------------------
+				@media screen 780px Start
+---------------------------------------------------------*/
+@media screen and (max-width: 780px) {
+
+}
+/*-------------------------------------------------------
+				@media screen 650px Start
+---------------------------------------------------------*/
+@media screen and (max-width: 650px){
+    .container {
+        width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .container-fluid {
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        align-items: center;
+    }
+}
