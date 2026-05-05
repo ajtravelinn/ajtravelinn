@@ -115,6 +115,18 @@ h1,h2,h3,h4,h5,h6,fieldset legend,.header-logo__name,.comment__author,.hp-review
 .header-hero { background-image: url(wp-content/uploads/2023/08/Travel_Inn-.jpg); }.header-hero { color: #ffffff; }
 /*# sourceURL=hivetheme-parent-frontend-inline-css */
 </style>
+<style>
+	.hp-listing__image img {
+		height: 270px !important;
+	}
+	h2.elementor-heading-title.elementor-size-default {
+		text-align: center;
+		color: #000;
+	}
+	.hp-listing-category--view-block .hp-listing-category__image a img {
+		min-height: 417px !important;
+	}
+</style>
 <link rel='stylesheet' id='elementor-frontend-css' href='wp-content/plugins/elementor/assets/css/frontend.min631d.css?ver=4.0.5' media='all' />
 <link rel='stylesheet' id='elementor-post-895-css' href='wp-content/uploads/elementor/css/post-895e7f6.css?ver=1777703153' media='all' />
 <link rel='stylesheet' id='widget-heading-css' href='wp-content/plugins/elementor/assets/css/widget-heading.min631d.css?ver=4.0.5' media='all' />
@@ -256,283 +268,526 @@ gtag("config", "GT-PZSJWD9F");
 				<div class="container-fluid pt-3">
  
 
-	<style>
-		.elementor-element.elementor-widget.elementor-widget-hivepress-listings {
-			width: 100% !important;
-		}
-		.hp-listing-category--view-block .hp-listing-category__item-count {
-			left: 0rem !important;
-			top: 0rem !important;
-		}
-		.container-fluid.pt-3 {
-			margin: 0 !important;
-			padding: 0 !important;
-			padding-top: 0 !important;
-		}
-		#content{
-			top: 0px !important;
-			margin-top: 0px !important;
-		}
-		.col-sm-12 {
-			margin: 0 !important;
-			padding: 0 !important;
-		}
-		/* Full width page layout */
-		.custom-fullwidth-page {
-			max-width: 100%;
-			width: 100%;
-			margin: 0;
-			padding: 0;
-		}
-		section.header-hero.header-hero--title{
-			display: none;
-		}
-		.container {
-			width: 100% !important;
-			padding-right: 0 !important;
-			padding-left: 0 !important;
-			margin-right: auto !important;
-			margin-left: auto !important;
-			margin-top: 0px !important;
-			margin-bottom: 0px !important;
-			padding-top: 0 !important;
-			padding-bottom: 0 !important;
-		}
-		footer .container {
-			padding: 3% ! IMPORTANT;
-			margin: 0 auto;
-		}
-		header.site-header {
-			position: fixed !important;
-			top: 0;
-			left: 0;
-			right: 0;
-			width: 100%;
-			z-index: 9999;
-			background: #0a0a0aa6;
-			transition: background 0.3s ease, box-shadow 0.3s ease;
-		}
+				<style>
+					.elementor-element.elementor-widget.elementor-widget-hivepress-listings {
+						width: 100% !important;
+					}
+					.hp-listing-category--view-block .hp-listing-category__item-count {
+						left: 0rem !important;
+						top: 0rem !important;
+					}
+					.container-fluid.pt-3 {
+						margin: 0 !important;
+						padding: 0 !important;
+						padding-top: 0 !important;
+					}
+					#content{
+						top: 0px !important;
+						margin-top: 0px !important;
+					}
+					.col-sm-12 {
+						margin: 0 !important;
+						padding: 0 !important;
+					}
+					/* Full width page layout */
+					.custom-fullwidth-page {
+						max-width: 100%;
+						width: 100%;
+						margin: 0;
+						padding: 0;
+					}
+					section.header-hero.header-hero--title{
+						display: none;
+					}
+					.container {
+						width: 100% !important;
+						padding-right: 0 !important;
+						padding-left: 0 !important;
+						margin-right: auto !important;
+						margin-left: auto !important;
+						margin-top: 0px !important;
+						margin-bottom: 0px !important;
+						padding-top: 0 !important;
+						padding-bottom: 0 !important;
+					}
+					footer .container {
+						padding: 3% ! IMPORTANT;
+						margin: 0 auto;
+					}
+					header.site-header {
+						position: fixed !important;
+						top: 0;
+						left: 0;
+						right: 0;
+						width: 100%;
+						z-index: 9999;
+						background: #0a0a0aa6;
+						transition: background 0.3s ease, box-shadow 0.3s ease;
+					}
 
-		/* when scrolled */
-		header.site-header.scrolled, ul.sub-menu.hp-menu.hp-menu--user-account, .header-navbar__menu ul li ul {
-			background: rgba(24, 24, 24, 0.925);
-			backdrop-filter: blur(10px);
-			box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-		}
-		.header-navbar__menu ul li a, .header-navbar__menu ul li.menu-item-has-children::after, .hp-link i {
-			color: rgb(246 246 247 / 75%) !important;
-		}
-		.header-navbar__menu ul li a:hover, .hp-link i:hover {
-			color: #ffba00 !important;
-		}
-		.header-navbar__burger>a i {
-			color: #fff;
-		}
-		
-		.site-footer {padding: 0rem 0 !important;margin-top: 3rem;}
-		footer .container {
-			background: #414141 !important;
-			color: #fff;
-		}
-		footer h5, footer.site-footer li a, footer.site-footer li a ::before{
-			color: #fff;
-		}
-		.widget_nav_menu li::before {
-			color: #fff;
-		}
-		.footer-widgets:not(:last-child) {border-bottom: 1px solid rgb(248 249 251 / 8%) !important;}
-		
-		/* Small devices (≥576px) */
-		@media (min-width: 576px) {
-			.container {
-				width: 100% !important;
-				padding-right: 0 !important;
-				padding-left: 0 !important;
-				margin-right: auto !important;
-				margin-left: auto !important;
-				margin-top: 0px !important;
-				margin-bottom: 0px !important;
-				padding-top: 0 !important;
-				padding-bottom: 0 !important;
-			}
-		}
+					/* when scrolled */
+					header.site-header.scrolled, ul.sub-menu.hp-menu.hp-menu--user-account, .header-navbar__menu ul li ul {
+						background: rgba(24, 24, 24, 0.925);
+						backdrop-filter: blur(10px);
+						box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+					}
+					.header-navbar__menu ul li a, .header-navbar__menu ul li.menu-item-has-children::after, .hp-link i {
+						color: rgb(246 246 247 / 75%) !important;
+					}
+					.header-navbar__menu ul li a:hover, .hp-link i:hover {
+						color: #ffba00 !important;
+					}
+					.header-navbar__burger>a i {
+						color: #fff;
+					}
+					
+					.site-footer {padding: 0rem 0 !important;margin-top: 3rem;}
+					footer .container {
+						background: #414141 !important;
+						color: #fff;
+					}
+					footer h5, footer.site-footer li a, footer.site-footer li a ::before{
+						color: #fff;
+					}
+					.widget_nav_menu li::before {
+						color: #fff;
+					}
+					.footer-widgets:not(:last-child) {border-bottom: 1px solid rgb(248 249 251 / 8%) !important;}
+					
+					/* Small devices (≥576px) */
+					@media (min-width: 576px) {
+						.container {
+							width: 100% !important;
+							padding-right: 0 !important;
+							padding-left: 0 !important;
+							margin-right: auto !important;
+							margin-left: auto !important;
+							margin-top: 0px !important;
+							margin-bottom: 0px !important;
+							padding-top: 0 !important;
+							padding-bottom: 0 !important;
+						}
+					}
 
-		/* Medium devices (≥768px) */
-		@media (min-width: 768px) {
-			.container {
-				width: 100% !important;
-				padding-right: 0 !important;
-				padding-left: 0 !important;
-				margin-right: 0 !important;
-				margin-left: 0 !important;
-				margin-top: 0px !important;
-				margin-bottom: 0px !important;
-				padding-top: 0 !important;
-				padding-bottom: 0 !important;
-			}
-			.container-fluid {
-				padding: 0;
-				margin: 0 auto;
-				display: flex;
-				flex-direction: column;
-				align-content: space-around;
-				align-items: center;
-			}
-		}
+					/* Medium devices (≥768px) */
+					@media (min-width: 768px) {
+						.container {
+							width: 100% !important;
+							padding-right: 0 !important;
+							padding-left: 0 !important;
+							margin-right: 0 !important;
+							margin-left: 0 !important;
+							margin-top: 0px !important;
+							margin-bottom: 0px !important;
+							padding-top: 0 !important;
+							padding-bottom: 0 !important;
+						}
+						.container-fluid {
+							padding: 0;
+							margin: 0 auto;
+							display: flex;
+							flex-direction: column;
+							align-content: space-around;
+							align-items: center;
+						}
+					}
 
-		/* Large devices (≥992px) */
-		@media (min-width: 992px) {
-			.container {
-				width: 100% !important;
-				padding-right: 0 !important;
-				padding-left: 0 !important;
-				margin-right: 0 !important;
-				margin-left: 0 !important;
-				margin-top: 0px !important;
-				margin-bottom: 0px !important;
-				padding-top: 0 !important;
-				padding-bottom: 0 !important;
-			}
-			.container-fluid {
-				padding: 0;
-				margin: 0 auto;
-				display: flex;
-				flex-direction: column;
-				align-content: space-around;
-				align-items: center;
-			}
-		}
-		/* XXL devices (≥1200px) */
-		@media (min-width: 1200px) {
-			.container, .container-lg, .container-md, .container-sm, .container-xl {
-				max-width: 100%;
-				padding: 0 !important;
-				margin: 0 !important;
-			}
-		}
-		/* XXL devices (≥1400px) */
-		@media (min-width: 1400px) {
-			.container {
-				width: 100% !important;
-				padding-right: 0 !important;
-				padding-left: 0 !important;
-				margin-right: auto !important;
-				margin-left: auto !important;
-				margin-top: 0px !important;
-				margin-bottom: 0px !important;
-				padding-top: 0 !important;
-				padding-bottom: 0 !important;
-			}
-		}
-	</style>
+					/* Large devices (≥992px) */
+					@media (min-width: 992px) {
+						.container {
+							width: 100% !important;
+							padding-right: 0 !important;
+							padding-left: 0 !important;
+							margin-right: 0 !important;
+							margin-left: 0 !important;
+							margin-top: 0px !important;
+							margin-bottom: 0px !important;
+							padding-top: 0 !important;
+							padding-bottom: 0 !important;
+						}
+						.container-fluid {
+							padding: 0;
+							margin: 0 auto;
+							display: flex;
+							flex-direction: column;
+							align-content: space-around;
+							align-items: center;
+						}
+					}
+					/* XXL devices (≥1200px) */
+					@media (min-width: 1200px) {
+						.container, .container-lg, .container-md, .container-sm, .container-xl {
+							max-width: 100%;
+							padding: 0 !important;
+							margin: 0 !important;
+						}
+					}
+					/* XXL devices (≥1400px) */
+					@media (min-width: 1400px) {
+						.container {
+							width: 100% !important;
+							padding-right: 0 !important;
+							padding-left: 0 !important;
+							margin-right: auto !important;
+							margin-left: auto !important;
+							margin-top: 0px !important;
+							margin-bottom: 0px !important;
+							padding-top: 0 !important;
+							padding-bottom: 0 !important;
+						}
+					}
+				</style>
 
 	<main id="main" class="site-main custom-fullwidth-page">
-				<div data-elementor-type="wp-page" data-elementor-id="902" class="elementor elementor-902">
-				<div class="elementor-element elementor-element-46cfc5d8 e-con-full e-flex e-con e-parent" data-id="46cfc5d8" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:814,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2024\/10\/Adventure-Activities-New-Zealand.jpg&quot;},{&quot;id&quot;:419,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/09\/Seine_River.jpg&quot;},{&quot;id&quot;:367,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Paris_France.jpg&quot;},{&quot;id&quot;:190,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/07\/navagio_beach_view-2.jpg&quot;},{&quot;id&quot;:199,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/06\/euriental_fashion_luxury_travel-3.jpg&quot;},{&quot;id&quot;:360,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/first_trip_together_as_a_new_couple.jpg&quot;},{&quot;id&quot;:372,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Bali_Indonesia.jpg&quot;},{&quot;id&quot;:373,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Sedona_Arizona_USA.jpg&quot;},{&quot;id&quot;:374,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/prague_czech_republic.jpg&quot;},{&quot;id&quot;:369,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Venice_Italy.jpg&quot;},{&quot;id&quot;:219,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/06\/euriental_fashion_luxury_travel-4-1.jpg&quot;}],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-		<div class="elementor-element elementor-element-389c28e6 e-con-full e-flex e-con e-child" data-id="389c28e6" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-6f926c67 e-con-full e-flex e-con e-child" data-id="6f926c67" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-3f1643a7 elementor-widget elementor-widget-heading" data-id="3f1643a7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">Discover Your Next Adventure</h2>				</div>
-				<div class="elementor-element elementor-element-534631a9 elementor-widget elementor-widget-text-editor" data-id="534631a9" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<p>Explore destinations, hotels, and tours around the world</p>								</div>
-				<div class="elementor-element elementor-element-4fc6d83a elementor-widget elementor-widget-hivepress-listing-search-form" data-id="4fc6d83a" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listing-search-form.default">
-				<div class="elementor-widget-container">
-					<form class="hp-form--wide hp-form--primary hp-block hp-form hp-form--listing-search" action="https://ajtravelinn.com/" method="GET" data-component="form"><div class="hp-form__messages" data-component="messages"></div><div class="hp-form__fields"><input type="hidden" name="post_type" value="hp_listing" class="hp-field hp-field--hidden"><input type="hidden" name="latitude" value="" data-coordinate="lat" class="hp-field hp-field--hidden"><input type="hidden" name="longitude" value="" data-coordinate="lng" class="hp-field hp-field--hidden"><input type="hidden" name="_region" value="" data-region="data-region" class="hp-field hp-field--hidden"><select name="_category" class="hp-field hp-field--hidden"><option value="">All Categories</option><option value="150">Italy</option><option value="151" data-level="1" data-parent="150">Tuscany</option><option value="152" data-level="2" data-parent="151">Cultural Hotspot</option><option value="146">Restaurants</option><option value="147">Tourist Spots of Bangladesh</option><option value="148" data-level="1" data-parent="147">Tourist Spots in Sylhet</option><option value="149" data-level="2" data-parent="148">Tourist Places in Sylhet</option></select><div class="hp-form__field hp-form__field--search"><input type="search" name="s" value="" placeholder="Keywords" maxlength="256" class="hp-field hp-field--search"></div><div class="hp-form__field hp-form__field--location"><div data-format="" data-countries="[]" data-region-types="[&quot;locality&quot;,&quot;administrative_area_level_2&quot;,&quot;administrative_area_level_1&quot;,&quot;country&quot;]" data-component="location" class="hp-field hp-field--location"><input type="text" name="location" value="" autocomplete="off" placeholder="Location" maxlength="256" class="hp-field hp-field--text"><a href="#" title="Locate Me"><i class="hp-icon fas fa-location-arrow"></i></a></div></div></div><div class="hp-form__footer"><button type="submit" class="hp-form__button button-primary alt button hp-field hp-field--submit"><span>Search</span></button></div></form>				</div>
+		<div data-elementor-type="wp-page" data-elementor-id="902" class="elementor elementor-902">
+			<div class="elementor-element elementor-element-46cfc5d8 e-con-full e-flex e-con e-parent" data-id="46cfc5d8" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:814,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2024\/10\/Adventure-Activities-New-Zealand.jpg&quot;},{&quot;id&quot;:419,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/09\/Seine_River.jpg&quot;},{&quot;id&quot;:367,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Paris_France.jpg&quot;},{&quot;id&quot;:190,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/07\/navagio_beach_view-2.jpg&quot;},{&quot;id&quot;:199,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/06\/euriental_fashion_luxury_travel-3.jpg&quot;},{&quot;id&quot;:360,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/first_trip_together_as_a_new_couple.jpg&quot;},{&quot;id&quot;:372,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Bali_Indonesia.jpg&quot;},{&quot;id&quot;:373,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Sedona_Arizona_USA.jpg&quot;},{&quot;id&quot;:374,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/prague_czech_republic.jpg&quot;},{&quot;id&quot;:369,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/08\/Venice_Italy.jpg&quot;},{&quot;id&quot;:219,&quot;url&quot;:&quot;https:\/\/ajtravelinn.com\/wp-content\/uploads\/2023\/06\/euriental_fashion_luxury_travel-4-1.jpg&quot;}],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
+				<div class="elementor-element elementor-element-389c28e6 e-con-full e-flex e-con e-child" data-id="389c28e6" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-element elementor-element-6f926c67 e-con-full e-flex e-con e-child" data-id="6f926c67" data-element_type="container" data-e-type="container">
+						<div class="elementor-element elementor-element-3f1643a7 elementor-widget elementor-widget-heading" data-id="3f1643a7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+							<h2 class="elementor-heading-title elementor-size-default">Discover Your Next Adventure</h2>
+						</div>
+						<div class="elementor-element elementor-element-534631a9 elementor-widget elementor-widget-text-editor" data-id="534631a9" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+							<p>Explore destinations, hotels, and tours around the world</p>								
+						</div>
+						<div class="elementor-element elementor-element-4fc6d83a elementor-widget elementor-widget-hivepress-listing-search-form" data-id="4fc6d83a" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listing-search-form.default">
+							<div class="elementor-widget-container">
+								<form class="hp-form--wide hp-form--primary hp-block hp-form hp-form--listing-search" action="https://ajtravelinn.com/" method="GET" data-component="form"><div class="hp-form__messages" data-component="messages"></div><div class="hp-form__fields"><input type="hidden" name="post_type" value="hp_listing" class="hp-field hp-field--hidden"><input type="hidden" name="latitude" value="" data-coordinate="lat" class="hp-field hp-field--hidden"><input type="hidden" name="longitude" value="" data-coordinate="lng" class="hp-field hp-field--hidden"><input type="hidden" name="_region" value="" data-region="data-region" class="hp-field hp-field--hidden"><select name="_category" class="hp-field hp-field--hidden"><option value="">All Categories</option><option value="150">Italy</option><option value="151" data-level="1" data-parent="150">Tuscany</option><option value="152" data-level="2" data-parent="151">Cultural Hotspot</option><option value="146">Restaurants</option><option value="147">Tourist Spots of Bangladesh</option><option value="148" data-level="1" data-parent="147">Tourist Spots in Sylhet</option><option value="149" data-level="2" data-parent="148">Tourist Places in Sylhet</option></select><div class="hp-form__field hp-form__field--search"><input type="search" name="s" value="" placeholder="Keywords" maxlength="256" class="hp-field hp-field--search"></div><div class="hp-form__field hp-form__field--location"><div data-format="" data-countries="[]" data-region-types="[&quot;locality&quot;,&quot;administrative_area_level_2&quot;,&quot;administrative_area_level_1&quot;,&quot;country&quot;]" data-component="location" class="hp-field hp-field--location"><input type="text" name="location" value="" autocomplete="off" placeholder="Location" maxlength="256" class="hp-field hp-field--text"><a href="#" title="Locate Me"><i class="hp-icon fas fa-location-arrow"></i></a></div></div></div><div class="hp-form__footer"><button type="submit" class="hp-form__button button-primary alt button hp-field hp-field--submit"><span>Search</span></button></div></form>				</div>
+							</div>
+						</div>
+					</div>
 				</div>
+		
+				<div class="elementor-element elementor-element-12bd084a e-con-full e-flex e-con e-parent" data-id="12bd084a" data-element_type="container" data-e-type="container">
+					<div class="elementor-element elementor-element-44e82b1e e-con-full e-flex e-con e-child" data-id="44e82b1e" data-element_type="container" data-e-type="container">
+						<div class="elementor-element elementor-element-74c590bb elementor-widget elementor-widget-heading" data-id="74c590bb" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+							<h2 class="elementor-heading-title elementor-size-default">
+								Featured Destinations
+							</h2>
+						</div>
+						<div class="elementor-element elementor-element-6066b3fd elementor-widget elementor-widget-hivepress-listings" data-id="6066b3fd" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listings.default">
+							<div class="elementor-widget-container">
+								<div class="hp-listings hp-block hp-grid">
+									<div class="hp-row">
+
+										<!-- CARD 1 -->
+										<div class="hp-grid__item hp-col-sm-4 hp-col-xs-12">
+											<article class="hp-listing hp-listing--view-block hp-listing--featured">
+											<header class="hp-listing__header">
+												<div class="hp-listing__featured-badge hp-listing__featured">
+												<i class="hp-icon fas fa-star"></i>
+												</div>
+												<div class="hp-listing__image">
+												<a href="listing/florence-the-cradle-of-renaissance/">
+													<img src="wp-content/uploads/2025/10/Florence-Tuscany-Italy-400x300.jpg" alt="Florence">
+												</a>
+												</div>
+											</header>
+											<div class="hp-listing__content">
+												<div class="hp-listing__categories">
+												<a href="listing-category/cultural-hotspot/">Cultural Hotspot</a>
+												</div>
+												<h4 class="hp-listing__title">
+												<a href="listing/florence-the-cradle-of-renaissance/">Florence – The Cradle of Renaissance</a>
+												</h4>
+												<div class="hp-listing__details">
+												<div class="hp-listing__location">Florence, Italy</div>
+												</div>
+											</div>
+											</article>
+										</div>
+
+										<!-- CARD 2 -->
+										<div class="hp-grid__item hp-col-sm-4 hp-col-xs-12">
+											<article class="hp-listing hp-listing--view-block hp-listing--featured">
+											<header class="hp-listing__header">
+												<div class="hp-listing__featured-badge hp-listing__featured">
+												<i class="hp-icon fas fa-star"></i>
+												</div>
+												<div class="hp-listing__image">
+												<a href="listing/paris-france/">
+													<img src="wp-content/uploads/2023/08/Paris_France.png" alt="Paris">
+												</a>
+												</div>
+											</header>
+											<div class="hp-listing__content">
+												<div class="hp-listing__categories">
+												<a href="listing-category/cultural-hotspot/">Cultural Hotspot</a>
+												</div>
+												<h4 class="hp-listing__title">
+												<a href="listing/paris-france/">Paris – City of Lights</a>
+												</h4>
+												<div class="hp-listing__details">
+												<div class="hp-listing__location">Paris, France</div>
+												</div>
+											</div>
+											</article>
+										</div>
+
+										<!-- CARD 3 -->
+										<div class="hp-grid__item hp-col-sm-4 hp-col-xs-12">
+											<article class="hp-listing hp-listing--view-block hp-listing--featured">
+											<header class="hp-listing__header">
+												<div class="hp-listing__featured-badge hp-listing__featured">
+												<i class="hp-icon fas fa-star"></i>
+												</div>
+												<div class="hp-listing__image">
+												<a href="listing/bali-indonesia/">
+													<img src="wp-content/uploads/2023/08/Bali_Indonesia.png" alt="Bali">
+												</a>
+												</div>
+											</header>
+											<div class="hp-listing__content">
+												<div class="hp-listing__categories">
+												<a href="listing-category/tourist-spots/">Tourist Spots</a>
+												</div>
+												<h4 class="hp-listing__title">
+												<a href="listing/bali-indonesia/">Bali – Island of Gods</a>
+												</h4>
+												<div class="hp-listing__details">
+												<div class="hp-listing__location">Bali, Indonesia</div>
+												</div>
+											</div>
+											</article>
+										</div>
+
+									</div>
+								</div>				
+							</div>
+						</div>
+					</div>
 				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-12bd084a e-con-full e-flex e-con e-parent" data-id="12bd084a" data-element_type="container" data-e-type="container">
-		<div class="elementor-element elementor-element-44e82b1e e-con-full e-flex e-con e-child" data-id="44e82b1e" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-74c590bb elementor-widget elementor-widget-heading" data-id="74c590bb" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">Featured Destinations</h2>				</div>
-				<div class="elementor-element elementor-element-6066b3fd elementor-widget elementor-widget-hivepress-listings" data-id="6066b3fd" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listings.default">
-				<div class="elementor-widget-container">
-					<div class="hp-listings hp-block hp-grid"><div class="hp-row"><div class="hp-grid__item hp-col-sm-4 hp-col-xs-12"><article class="hp-listing hp-listing--view-block hp-listing--featured"><header class="hp-listing__header">	<div class="hp-listing__featured-badge hp-listing__featured" title="Featured">
-		<i class="hp-icon fas fa-star"></i>
-	</div>
-	<div class="hp-listing__image" data-component="carousel-slider" data-preview="false" data-aspect-ratio="" data-url="https://ajtravelinn.com/listing/florence-the-cradle-of-renaissance/">
-			<a href="listing/florence-the-cradle-of-renaissance/">
-							<img decoding="async" src="wp-content/uploads/2025/10/Florence-Tuscany-Italy-400x300.jpg" alt="Florence – The Cradle of Renaissance" loading="lazy">
-					</a>
-	</div>
-</header><div class="hp-listing__content">	<div class="hp-listing__categories hp-listing__category">
-					<a href="listing-category/cultural-hotspot/">Cultural Hotspot</a>
+				<div class="elementor-element elementor-element-3300193b e-con-full e-flex e-con e-parent" data-id="3300193b" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-element elementor-element-1aa31fdf e-con-full e-flex e-con e-child" data-id="1aa31fdf" data-element_type="container" data-e-type="container">
+						<div class="elementor-element elementor-element-3b2499e1 elementor-widget elementor-widget-heading" data-id="3b2499e1" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+							<h2 class="elementor-heading-title elementor-size-default">Recently Listed</h2>				
+						</div>
+						<div class="elementor-element elementor-element-518e3cae elementor-widget elementor-widget-hivepress-listings" data-id="518e3cae" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listings.default">
+							<div class="elementor-widget-container">
+								<div class="hp-listings hp-block hp-grid">
+									<div class="hp-row">
+
+										<!-- CARD 1 -->
+										<div class="hp-grid__item hp-col-sm-4 hp-col-xs-12">
+											<article class="hp-listing hp-listing--view-block hp-listing--featured">
+												
+												<header class="hp-listing__header">
+													<div class="hp-listing__featured-badge hp-listing__featured" title="Featured">
+														<i class="hp-icon fas fa-star"></i>
+													</div>
+													<div class="hp-listing__image">
+														<a href="listing/florence-the-cradle-of-renaissance/">
+															<img src="wp-content/uploads/2025/10/Florence-Tuscany-Italy-400x300.jpg" alt="">
+														</a>
+													</div>
+												</header>
+
+												<div class="hp-listing__content">
+													<div class="hp-listing__categories">
+														<a href="listing-category/cultural-hotspot/">Cultural Hotspot</a>
+													</div>
+
+													<h4 class="hp-listing__title">
+														<a href="listing/florence-the-cradle-of-renaissance/">Florence – The Cradle of Renaissance</a>
+													</h4>
+
+													<div class="hp-listing__details">
+														<div class="hp-listing__location">
+															<i class="hp-icon fas fa-map-marker-alt"></i>
+															Florence, Italy
+														</div>
+													</div>
+												</div>
+
+											</article>
+										</div>
+
+
+										<!-- CARD 2 -->
+										<div class="hp-grid__item hp-col-sm-4 hp-col-xs-12">
+											<article class="hp-listing hp-listing--view-block hp-listing--featured">
+
+												<header class="hp-listing__header">
+													<div class="hp-listing__featured-badge hp-listing__featured">
+														<i class="hp-icon fas fa-star"></i>
+													</div>
+													<div class="hp-listing__image">
+														<a href="#">
+															<img src="wp-content/uploads/2023/08/Bali_Indonesia_island_of_god.png" alt="">
+														</a>
+													</div>
+												</header>
+
+												<div class="hp-listing__content">
+													<div class="hp-listing__categories">
+														<a href="#">Beach Paradise</a>
+													</div>
+
+													<h4 class="hp-listing__title">
+														<a href="#">Bali – Island of Gods</a>
+													</h4>
+
+													<div class="hp-listing__details">
+														<div class="hp-listing__location">
+															<i class="hp-icon fas fa-map-marker-alt"></i>
+															Bali, Indonesia
+														</div>
+													</div>
+												</div>
+
+											</article>
+										</div>
+
+
+										<!-- CARD 3 -->
+										<div class="hp-grid__item hp-col-sm-4 hp-col-xs-12">
+											<article class="hp-listing hp-listing--view-block hp-listing--featured">
+
+												<header class="hp-listing__header">
+													<div class="hp-listing__featured-badge hp-listing__featured">
+														<i class="hp-icon fas fa-star"></i>
+													</div>
+													<div class="hp-listing__image">
+														<a href="#">
+															<img src="wp-content/uploads/2023/08/prague_czech_republic.png" alt="">
+														</a>
+													</div>
+												</header>
+
+												<div class="hp-listing__content">
+													<div class="hp-listing__categories">
+														<a href="#">Historic City</a>
+													</div>
+
+													<h4 class="hp-listing__title">
+														<a href="#">Prague – City of Hundred Spires</a>
+													</h4>
+
+													<div class="hp-listing__details">
+														<div class="hp-listing__location">
+															<i class="hp-icon fas fa-map-marker-alt"></i>
+															Prague, Czech Republic
+														</div>
+													</div>
+												</div>
+
+											</article>
+										</div>
+
+									</div>
+								</div>
+							</div>				
+						</div>	
+					</div>		
+				</div>			
 			</div>
-	<h4 class="hp-listing__title"><a href="listing/florence-the-cradle-of-renaissance/">Florence – The Cradle of Renaissance</a>
-</h4><div class="hp-listing__details hp-listing__details--primary">	<div class="hp-listing__location">
-		<i class="hp-icon fas fa-map-marker-alt"></i>
-					<a href="https://www.google.com/maps/search/?api=1&amp;query=," target="_blank">Florence, Tuscany, Italy</a>
-			</div>
-	<time class="hp-listing__created-date hp-listing__date hp-meta" datetime="2025-10-18 22:08:39">
-	Added on October 18, 2025</time>
-</div></div><footer class="hp-listing__footer"><div class="hp-listing__actions hp-listing__actions--primary"></div></footer></article></div></div></div>				</div>
-				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-3300193b e-con-full e-flex e-con e-parent" data-id="3300193b" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-1aa31fdf e-con-full e-flex e-con e-child" data-id="1aa31fdf" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-3b2499e1 elementor-widget elementor-widget-heading" data-id="3b2499e1" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">Recently Listed</h2>				</div>
-				<div class="elementor-element elementor-element-518e3cae elementor-widget elementor-widget-hivepress-listings" data-id="518e3cae" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listings.default">
-				<div class="elementor-widget-container">
-					<div class="hp-listings hp-block hp-grid"><div class="hp-row"><div class="hp-grid__item hp-col-sm-4 hp-col-xs-12"><article class="hp-listing hp-listing--view-block hp-listing--featured"><header class="hp-listing__header">	<div class="hp-listing__featured-badge hp-listing__featured" title="Featured">
-		<i class="hp-icon fas fa-star"></i>
-	</div>
-	<div class="hp-listing__image" data-component="carousel-slider" data-preview="false" data-aspect-ratio="" data-url="https://ajtravelinn.com/listing/florence-the-cradle-of-renaissance/">
-			<a href="listing/florence-the-cradle-of-renaissance/">
-							<img decoding="async" src="wp-content/uploads/2025/10/Florence-Tuscany-Italy-400x300.jpg" alt="Florence – The Cradle of Renaissance" loading="lazy">
-					</a>
-	</div>
-</header><div class="hp-listing__content">	<div class="hp-listing__categories hp-listing__category">
-					<a href="listing-category/cultural-hotspot/">Cultural Hotspot</a>
-			</div>
-	<h4 class="hp-listing__title"><a href="listing/florence-the-cradle-of-renaissance/">Florence – The Cradle of Renaissance</a>
-</h4><div class="hp-listing__details hp-listing__details--primary">	<div class="hp-listing__location">
-		<i class="hp-icon fas fa-map-marker-alt"></i>
-					<a href="https://www.google.com/maps/search/?api=1&amp;query=," target="_blank">Florence, Tuscany, Italy</a>
-			</div>
-	<time class="hp-listing__created-date hp-listing__date hp-meta" datetime="2025-10-18 22:08:39">
-	Added on October 18, 2025</time>
-</div></div><footer class="hp-listing__footer"><div class="hp-listing__actions hp-listing__actions--primary"></div></footer></article></div></div></div>				</div>
-				</div>
-				</div>
-				</div>
 		<div class="elementor-element elementor-element-6a8a2657 e-con-full e-flex e-con e-parent" data-id="6a8a2657" data-element_type="container" data-e-type="container">
-		<div class="elementor-element elementor-element-29b994b8 e-con-full e-flex e-con e-child" data-id="29b994b8" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-73b4da93 elementor-widget elementor-widget-heading" data-id="73b4da93" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">Browse by Category</h2>				</div>
-				<div class="elementor-element elementor-element-e0b212a elementor-widget__width-inherit elementor-widget elementor-widget-hivepress-listing-categories" data-id="e0b212a" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listing-categories.default">
-				<div class="elementor-widget-container">
-					<div class="hp-listing-categories hp-grid hp-block"><div class="hp-row"><div class="hp-grid__item hp-col-sm-3 hp-col-xs-12"><article class="hp-listing-category hp-listing-category--view-block"><header class="hp-listing-category__header"><div class="hp-listing-category__image">
-	<a href="listing-category/italy/">
-					<img decoding="async" src="wp-content/uploads/2025/10/italy-nature-400x430.jpg" alt="Italy" loading="lazy">
-			</a>
-</div>
-<div class="hp-listing-category__item-count hp-listing-category__count">1 Listing</div>
-</header><div class="hp-listing-category__content"><h3 class="hp-listing-category__name"><a href="listing-category/italy/">Italy</a>
-</h3><div class="hp-listing-category__details hp-listing-category__details--primary"></div>	<div class="hp-listing-category__description">Discover Italy — the land of history, art, and romance!</div>
-	</div></article></div><div class="hp-grid__item hp-col-sm-3 hp-col-xs-12"><article class="hp-listing-category hp-listing-category--view-block"><header class="hp-listing-category__header"><div class="hp-listing-category__image">
-	<a href="listing-category/restaurants/">
-					<img decoding="async" src="wp-content/uploads/2025/10/restaurant-400x533.jpg" alt="Restaurants" loading="lazy">
-			</a>
-</div>
-<div class="hp-listing-category__item-count hp-listing-category__count">0 Listings</div>
-</header><div class="hp-listing-category__content"><h3 class="hp-listing-category__name"><a href="listing-category/restaurants/">Restaurants</a>
-</h3><div class="hp-listing-category__details hp-listing-category__details--primary"></div>	<div class="hp-listing-category__description">Find top-rated restaurants near you.</div>
-	</div></article></div><div class="hp-grid__item hp-col-sm-3 hp-col-xs-12"><article class="hp-listing-category hp-listing-category--view-block"><header class="hp-listing-category__header"><div class="hp-listing-category__image">
-	<a href="listing-category/tourist-spots-of-bangladesh/">
-					<img decoding="async" src="wp-content/themes/listinghive/vendor/hivepress/hivetheme/assets/images/placeholders/image-portrait.svg" alt="Tourist Spots of Bangladesh" loading="lazy">
-			</a>
-</div>
-<div class="hp-listing-category__item-count hp-listing-category__count">0 Listings</div>
-</header><div class="hp-listing-category__content"><h3 class="hp-listing-category__name"><a href="listing-category/tourist-spots-of-bangladesh/">Tourist Spots of Bangladesh</a>
-</h3><div class="hp-listing-category__details hp-listing-category__details--primary"></div></div></article></div></div></div>				</div>
-				</div>
-				</div>
-				</div>
-				</div>
-			</main>
+			<div class="elementor-element elementor-element-29b994b8 e-con-full e-flex e-con e-child" data-id="29b994b8" data-element_type="container" data-e-type="container">
+					<div class="elementor-element elementor-element-73b4da93 elementor-widget elementor-widget-heading" data-id="73b4da93" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+						<h2 class="elementor-heading-title elementor-size-default" style="margin-bottom: 10px;padding: 40px 0px;">Browse by Category</h2>
+					</div>
+					<div class="elementor-element elementor-element-e0b212a elementor-widget__width-inherit elementor-widget elementor-widget-hivepress-listing-categories" data-id="e0b212a" data-element_type="widget" data-e-type="widget" data-widget_type="hivepress-listing-categories.default">
+					<div class="elementor-widget-container">
+						<div class="hp-listing-categories hp-grid hp-block">
+							<div class="hp-row">
+								<div class="hp-grid__item hp-col-sm-3 hp-col-xs-12">
+									<article class="hp-listing-category hp-listing-category--view-block">
+										<header class="hp-listing-category__header">
+											<div class="hp-listing-category__image">
+												<a href="listing-category/italy/">
+													<img decoding="async" src="wp-content/uploads/2025/10/italy-nature-400x430.jpg" alt="Italy" loading="lazy">
+												</a>
+											</div>
+											<div class="hp-listing-category__item-count hp-listing-category__count">1 Listing</div>
+										</header>
+										<div class="hp-listing-category__content">
+											<h3 class="hp-listing-category__name">
+												<a href="listing-category/italy/">Italy</a>
+											</h3>
+											<div class="hp-listing-category__details hp-listing-category__details--primary">
+											</div>
+											<div class="hp-listing-category__description">
+												Discover Italy — the land of history, art, and romance!
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="hp-grid__item hp-col-sm-3 hp-col-xs-12">
+									<article class="hp-listing-category hp-listing-category--view-block">
+										<header class="hp-listing-category__header">
+											<div class="hp-listing-category__image">
+												<a href="listing-category/restaurants/">
+													<img decoding="async" src="wp-content/uploads/2025/10/restaurant-400x533.jpg" alt="Restaurants" loading="lazy">
+												</a>
+											</div>
+											<div class="hp-listing-category__item-count hp-listing-category__count">0 Listings</div>
+										</header>
+										<div class="hp-listing-category__content">
+											<h3 class="hp-listing-category__name">
+												<a href="listing-category/restaurants/">Restaurants</a>
+											</h3>
+											<div class="hp-listing-category__details hp-listing-category__details--primary">
+											</div>
+											<div class="hp-listing-category__description">
+												Find top-rated restaurants near you.
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="hp-grid__item hp-col-sm-3 hp-col-xs-12">
+									<article class="hp-listing-category hp-listing-category--view-block">
+										<header class="hp-listing-category__header">
+											<div class="hp-listing-category__image">
+												<a href="listing-category/tourist-spots-of-bangladesh/">
+													<img decoding="async" src="wp-content/themes/listinghive/vendor/hivepress/hivetheme/assets/images/placeholders/image-portrait.svg" alt="Tourist Spots of Bangladesh" loading="lazy">
+												</a>
+											</div>
+											<div class="hp-listing-category__item-count hp-listing-category__count">0 Listings</div>
+										</header>
+										<div class="hp-listing-category__content">
+											<h3 class="hp-listing-category__name">
+												<a href="listing-category/tourist-spots-of-bangladesh/">Tourist Spots of Bangladesh</a>
+											</h3>
+											<div class="hp-listing-category__details hp-listing-category__details--primary">
+											</div>
+											<div class="hp-listing-category__description">
+												Explore the beauty of Bangladesh's tourist spots, from the Sundarbans to Cox's Bazar.
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="hp-grid__item hp-col-sm-3 hp-col-xs-12">
+									<article class="hp-listing-category hp-listing-category--view-block">
+										<header class="hp-listing-category__header">
+											<div class="hp-listing-category__image">
+												<a href="listing-category/beaches/">
+													<img decoding="async" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=533&fit=crop" alt="Beaches" loading="lazy">
+												</a>
+											</div>
+											<div class="hp-listing-category__item-count hp-listing-category__count">0 Listings</div>
+										</header>
+
+										<div class="hp-listing-category__content">
+											<h3 class="hp-listing-category__name">
+												<a href="listing-category/beaches/">Beaches</a>
+											</h3>
+
+											<div class="hp-listing-category__details hp-listing-category__details--primary"></div>
+
+											<div class="hp-listing-category__description">
+												Relax at the world’s most beautiful beaches and coastal destinations.
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>			
+		</div>
+</div>			
+</div>			
+</main>
 
 	
 	<script>
