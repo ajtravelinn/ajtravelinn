@@ -1,17 +1,12 @@
 User-agent: *
-Disallow: /wp-admin/
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /?s=*
-Disallow: */feed/
-Disallow: */feed/$
-Disallow: /comments/feed
-Disallow: /porpoiseant
-Disallow: /*.webp$
-Disallow: /wp-content/uploads/
-Disallow: /users/
-Disallow: /custom-url/
 Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /?s=
+Disallow: */feed/
+Disallow: /comments/feed/
+Disallow: /trackback/
+Disallow: /cgi-bin/
 
 Sitemap: https://ajtravelinn.com/sitemap.xml
 Sitemap: https://ajtravelinn.com/sitemap.rss
