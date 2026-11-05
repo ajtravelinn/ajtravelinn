@@ -53,7 +53,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+		<link href="/wp-content/themes/listinghive-child/assets/travel-css.css" type="text/css">
 		<style>
 			:root {
 			--navy: #081B32;
@@ -945,20 +945,35 @@
 			</section>
 
 			<!-- SEARCH -->
+			
 			<section class="container search-strip">
-			<div class="search-inner">
-				<div>
-				<h3>Where would you like to explore?</h3>
-				<p>Find destination guides and travel inspiration.</p>
+				<div class="search-inner">
+					<div>
+						<h3>Where would you like to explore?</h3>
+						<p>Find destination guides and travel inspiration.</p>
+					</div>
+
+					<div class="travel-search-wrapper">
+						<input
+							type="search"
+							id="travelSearch"
+							placeholder="Search destinations, guides..."
+							autocomplete="off"
+						>
+
+						<button class="btn btn-primary"
+								type="button"
+								onclick="searchTravel()">
+							Search →
+						</button>
+
+						<!-- Live search suggestions -->
+						<div id="travelSearchResults"
+							 class="travel-search-results"
+							 hidden>
+						</div>
+					</div>
 				</div>
-
-				<input type="search" id="travelSearch"
-				placeholder="Search destinations, guides...">
-
-				<button class="btn btn-primary" onclick="searchTravel()">
-				Search →
-				</button>
-			</div>
 			</section>
 
 			<!-- DESTINATIONS -->
@@ -997,7 +1012,7 @@
 				</a>
 
 				<a href="/destinations/sri-lanka/" class="destination-card">
-					<img src="https://images.unsplash.com/photo-1588598198321-9735fd524a0b?auto=format&fit=crop&w=800&q=80"
+					<img src="https://images.unsplash.com/photo-1609681980718-340e7f4b11d7?q=80&w=540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
 					alt="Sri Lanka mountain and landscape" loading="lazy">
 					<div class="destination-info">
 					<span>Nature & Culture</span>
@@ -1348,59 +1363,46 @@
 		</div>
 		</footer>
 
-	<script>
-		/* Mobile navigation */
-		const mobileToggle = document.getElementById('mobileToggle');
-		const navMenu = document.getElementById('navMenu');
+			
+		<script>
+			/* Mobile navigation */
+			const mobileToggle = document.getElementById('mobileToggle');
+			const navMenu = document.getElementById('navMenu');
 
-		mobileToggle.addEventListener('click', function() {
-		const isOpen = navMenu.classList.toggle('open');
-		mobileToggle.setAttribute('aria-expanded', isOpen);
-		mobileToggle.setAttribute('aria-label',
-			isOpen ? 'Close navigation' : 'Open navigation');
-		mobileToggle.textContent = isOpen ? '✕' : '☰';
-		});
+			mobileToggle.addEventListener('click', function() {
+				const isOpen = navMenu.classList.toggle('open');
+				mobileToggle.setAttribute('aria-expanded', isOpen);
+				mobileToggle.setAttribute('aria-label',
+					isOpen ? 'Close navigation' : 'Open navigation');
+				mobileToggle.textContent = isOpen ? '✕' : '☰';
+			});
 
-		/* Close mobile menu after navigation */
-		navMenu.querySelectorAll('a').forEach(link => {
-		link.addEventListener('click', () => {
-			navMenu.classList.remove('open');
-			mobileToggle.setAttribute('aria-expanded', 'false');
-			mobileToggle.textContent = '☰';
-		});
-		});
+			/* Close mobile menu after navigation */
+			navMenu.querySelectorAll('a').forEach(link => {
+				link.addEventListener('click', () => {
+					navMenu.classList.remove('open');
+					mobileToggle.setAttribute('aria-expanded', 'false');
+					mobileToggle.textContent = '☰';
+				});
+			});
 
-		/* Search */
-		function searchTravel() {
-		const query = document.getElementById('travelSearch').value.trim();
+			/* Blogger Live Search */
+			// INSERT THE COMPLETE BLOGGER LIVE SEARCH JAVASCRIPT HERE.
+			// Use the JavaScript from my previous answer.
 
-		if (!query) {
-			document.getElementById('travelSearch').focus();
-			return;
-		}
+			/* Newsletter placeholder */
+			document.getElementById('newsletterForm')
+			.addEventListener('submit', function(event) {
+				event.preventDefault();
 
-		window.location.href =
-			'/?s=' + encodeURIComponent(query);
-		}
+				document.getElementById('newsletterMessage').textContent =
+				'Newsletter integration is not configured yet. Please try again later.';
+			});
 
-		document.getElementById('travelSearch')
-		.addEventListener('keydown', function(event) {
-			if (event.key === 'Enter') searchTravel();
-		});
-
-		/* Newsletter placeholder */
-		document.getElementById('newsletterForm')
-		.addEventListener('submit', function(event) {
-			event.preventDefault();
-
-			document.getElementById('newsletterMessage').textContent =
-			'Newsletter integration is not configured yet. Please try again later.';
-		});
-
-		/* Dynamic copyright year */
-		document.getElementById('currentYear').textContent =
-		new Date().getFullYear();
-	</script>
+			/* Dynamic copyright year */
+			document.getElementById('currentYear').textContent =
+			new Date().getFullYear();
+		</script>
 
 </body>
 </html>
