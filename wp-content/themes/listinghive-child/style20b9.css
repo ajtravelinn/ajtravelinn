@@ -173,6 +173,9 @@ a.page-numbers:hover{
         display: block;
         object-fit: cover;
     }
+    a.hp-menu__item.hp-menu__item--listing-submit.button.button--secondary:hover {
+        color: #f5f5f5;
+    }
 /*=========================================================
 							Responsive 
 ===========================================================*/

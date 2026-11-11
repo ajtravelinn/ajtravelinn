@@ -369,6 +369,74 @@
 			border-color: var(--teal);
 			}
 
+			/* LIVE SEARCH DROPDOWN */
+
+			.travel-search-wrapper {
+			position: relative;
+			}
+
+			.travel-search-results {
+			position: absolute;
+			top: calc(100% + 8px);
+			left: 0;
+			right: 0;
+			background: var(--white);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			z-index: 50;
+			max-height: 330px;
+			overflow-y: auto;
+			text-align: left;
+			}
+
+			.travel-search-item {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			padding: 10px 14px;
+			border-bottom: 1px solid var(--soft);
+			}
+
+			.travel-search-item:last-child { border-bottom: none; }
+
+			.travel-search-item:hover { background: var(--soft); }
+
+			.travel-search-item img {
+			width: 46px;
+			height: 46px;
+			min-width: 46px;
+			border-radius: 6px;
+			}
+
+			.travel-search-item-text {
+			display: flex;
+			flex-direction: column;
+			min-width: 0;
+			}
+
+			.travel-search-item strong {
+			font-size: 14px;
+			line-height: 1.4;
+			color: var(--text);
+			}
+
+			.travel-search-item small {
+			display: block;
+			font-size: 12px;
+			color: var(--muted);
+			line-height: 1.4;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			}
+
+			.travel-search-message {
+			padding: 14px;
+			font-size: 13px;
+			color: var(--muted);
+			}
+
 			/* DESTINATIONS */
 
 			.destination-grid {
@@ -888,14 +956,14 @@
 			</a>
 
 			<nav aria-label="Main navigation">
-			<ul class="nav-menu" id="navMenu">
-				<li><a href="/">Home</a></li>
-				<li><a href="/destinations/">Destinations</a></li>
-				<li><a href="/travel-guides/">Travel Guides</a></li>
-				<li><a href="/travel-tips/">Travel Tips</a></li>
-				<li><a href="/travel-resources/">Resources</a></li>
-				<li><a href="/about/">About</a></li>
-			</ul>
+				<ul class="nav-menu" id="navMenu">
+					<li><a href="/">Home</a></li>
+					<li><a href="/destinations/">Destinations</a></li>
+					<li><a href="/travel-guides/">Travel Guides</a></li>
+					<li><a href="/travel-tips/">Travel Tips</a></li>
+					<li><a href="/travel-resources/">Resources</a></li>
+					<li><a href="/about/">About</a></li>
+				</ul>
 			</nav>
 
 			<div class="header-actions">
@@ -1387,8 +1455,185 @@
 			});
 
 			/* Blogger Live Search */
-			// INSERT THE COMPLETE BLOGGER LIVE SEARCH JAVASCRIPT HERE.
-			// Use the JavaScript from my previous answer.
+			const travelSearchSite = 'https://www.ajtravelinn.com';
+			const travelSearchInput = document.getElementById('travelSearch');
+			const travelSearchResults = document.getElementById('travelSearchResults');
+
+			function searchTravel() {
+				const query = travelSearchInput.value.trim();
+
+				if (query) {
+					window.location.href = travelSearchSite + '/search?q=' + encodeURIComponent(query);
+				} else {
+					travelSearchInput.focus();
+				}
+			}
+
+			function escapeTravelHtml(text) {
+				const div = document.createElement('div');
+				div.textContent = text;
+				return div.innerHTML;
+			}
+
+			function stripTravelHtml(html) {
+				const doc = new DOMParser().parseFromString(html, 'text/html');
+				return (doc.body.textContent || '').replace(/\s+/g, ' ').trim();
+			}
+
+			function getTravelPostUrl(entry) {
+				const links = entry.link || [];
+
+				for (const link of links) {
+					if (link.rel === 'alternate') return link.href;
+				}
+
+				return '';
+			}
+
+			function getTravelThumbnail(entry) {
+				const thumb = entry['media$thumbnail'];
+
+				if (!thumb || !thumb.url) return '';
+
+				/* Request a larger version of Blogger's small thumbnail */
+				return thumb.url.replace('/s72-c/', '/s160-c/');
+			}
+
+			function renderTravelMessage(text) {
+				travelSearchResults.innerHTML =
+					'<div class="travel-search-message">' + escapeTravelHtml(text) + '</div>';
+				travelSearchResults.hidden = false;
+			}
+
+			function renderTravelResults(entries) {
+				let html = '';
+
+				entries.forEach(entry => {
+					const title = entry.title && entry.title.$t ? entry.title.$t : 'Untitled';
+					const url = getTravelPostUrl(entry);
+					const thumb = getTravelThumbnail(entry);
+					const snippet = entry.summary && entry.summary.$t
+						? stripTravelHtml(entry.summary.$t) : '';
+
+					html += '<a class="travel-search-item" href="' + escapeTravelHtml(url) + '">'
+						+ (thumb
+							? '<img src="' + escapeTravelHtml(thumb) + '" alt="" loading="lazy">'
+							: '')
+						+ '<span class="travel-search-item-text">'
+						+ '<strong>' + escapeTravelHtml(title) + '</strong>'
+						+ (snippet
+							? '<small>' + escapeTravelHtml(snippet.substring(0, 90)) + '</small>'
+							: '')
+						+ '</span></a>';
+				});
+
+				travelSearchResults.innerHTML = html;
+				travelSearchResults.hidden = false;
+			}
+
+			function hideTravelResults() {
+				travelSearchResults.hidden = true;
+				travelSearchResults.innerHTML = '';
+			}
+
+			let travelSearchTimer = null;
+			let travelSearchSeq = 0;
+			let travelJsonpCounter = 0;
+
+			/* Blogger feeds send no CORS headers, so a cross-origin fetch()
+			   would be blocked when this page is opened locally or from
+			   another domain. Loading the feed as alt=json-in-script (JSONP)
+			   works from anywhere, including the live blog itself. */
+			function loadTravelFeed(query) {
+				return new Promise((resolve, reject) => {
+					const callbackName = 'travelSearchJsonp' + (++travelJsonpCounter);
+					const script = document.createElement('script');
+					let loadingTimer = null;
+
+					const cleanup = () => {
+						delete window[callbackName];
+						script.remove();
+						clearTimeout(loadingTimer);
+					};
+
+					/* Give up if the feed never answers */
+					loadingTimer = setTimeout(() => {
+						cleanup();
+						reject(new Error('Feed request timed out'));
+					}, 8000);
+
+					window[callbackName] = data => {
+						cleanup();
+						resolve(data);
+					};
+
+					script.onerror = () => {
+						cleanup();
+						reject(new Error('Feed request failed'));
+					};
+
+					script.src = travelSearchSite
+						+ '/feeds/posts/summary?alt=json-in-script&max-results=8'
+						+ '&callback=' + callbackName
+						+ '&q=' + encodeURIComponent(query);
+
+					document.head.appendChild(script);
+				});
+			}
+
+			function fetchTravelResults(query) {
+				const seq = ++travelSearchSeq;
+
+				loadTravelFeed(query)
+					.then(data => {
+						/* Ignore stale responses that finished after a newer one */
+						if (seq !== travelSearchSeq) return;
+
+						const entries = (data.feed && data.feed.entry) || [];
+
+						if (entries.length) {
+							renderTravelResults(entries);
+						} else {
+							renderTravelMessage('No results found for "' + query + '"');
+						}
+					})
+					.catch(() => {
+						if (seq === travelSearchSeq) hideTravelResults();
+					});
+			}
+
+			travelSearchInput.addEventListener('input', function() {
+				const query = this.value.trim();
+
+				clearTimeout(travelSearchTimer);
+
+				if (query.length < 2) {
+					travelSearchSeq++;
+					hideTravelResults();
+					return;
+				}
+
+				travelSearchTimer = setTimeout(() => fetchTravelResults(query), 300);
+			});
+
+			travelSearchInput.addEventListener('keydown', function(event) {
+				if (event.key === 'Enter') {
+					event.preventDefault();
+					searchTravel();
+				}
+
+				if (event.key === 'Escape') {
+					hideTravelResults();
+				}
+			});
+
+			document.addEventListener('click', function(event) {
+				if (!travelSearchResults.hidden &&
+					event.target !== travelSearchInput &&
+					!travelSearchResults.contains(event.target)) {
+					hideTravelResults();
+				}
+			});
 
 			/* Newsletter placeholder */
 			document.getElementById('newsletterForm')
